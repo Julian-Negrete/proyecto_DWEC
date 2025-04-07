@@ -1,0 +1,6 @@
+.footer-icon {
+    color: white; /* o #fff */
+    margin: 8px; /* opcional, para separar un poquito */
+    border: 1px solid white;
+    padding: 5px;
+  }

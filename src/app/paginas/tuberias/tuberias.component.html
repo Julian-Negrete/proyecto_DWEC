@@ -1,0 +1,60 @@
+<p class="pipes">
+  Pipes
+</p>
+<hr>
+<div class="ancho">
+<table class="table table-bordered">
+  <thead>
+    <tr class="bordes">
+      <th class="bordes">Pipes</th>
+      <th class="bordes">Origen</th>
+      <th class="bordes">Expresión</th>
+      <th class="bordes">Resultado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UpperCase</td>
+      <td>{{ texto }}</td>
+      <td>texto | uppercase</td>
+      <td>{{ texto | uppercase }}</td>
+    </tr>
+    <tr>
+      <td>LowerCase</td>
+      <td>{{ texto }}</td>
+      <td>texto | lowercase</td>
+      <td>{{ texto | lowercase }}</td>
+    </tr>
+    <tr>
+      <td>Slice</td>
+      <td>{{ cadenaTexto }}</td>
+      <td>cadenaTexto | slice:1:3</td>
+      <td>{{ cadenaTexto | slice:1:3 }}</td>
+    </tr>
+    <tr>
+      <td>Titlecase</td>
+      <td>{{ cadenaTexto }}</td>
+      <td>cadenaTexto | titlecase</td>
+      <td>{{ cadenaTexto | titlecase }}</td>
+    </tr>
+    <tr>
+      <td>Number - Decimal</td>
+      <td>{{ numero }}</td>
+      <td>numero | number:'1.2-2'</td>
+      <td>{{ numero | number:'1.2-2' }}</td>
+    </tr>
+    <tr>
+      <td>Moneda</td>
+      <td>{{ moneda }}</td>
+      <td>moneda | currency:'EUR'</td>
+      <td>{{ moneda | currency:'EUR' }}</td>
+    </tr>
+    <tr>
+      <td>Fecha</td>
+      <td>{{ fechaActual }}</td>
+      <td>fechaActual | date:'medium'</td>
+      <td>{{ fechaActual | date:'medium' }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

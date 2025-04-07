@@ -1,0 +1,29 @@
+<div class="container mt-4 bordes">
+    <h2 class="mb-3">DIRECTIVAS ESTRUCTURALES</h2>
+    <div class="row">
+      <!-- COLUMNA IZQUIERDA -->
+      <div class="col-md-6 separar">
+        <h4>nglf</h4>
+        <hr>
+        <div *ngIf="mostrarEjemplo" class="card p-3 mb-3">
+          <h5><strong>Ejemplo de funcionamiento de nglf</strong></h5>
+          <p>Pulsa en el botón para ocultar / mostrar el contenido</p>
+        </div>
+  
+        <button class="btn btn-primary" (click)="toggleEjemplo()">
+          Mostrar/Ocultar
+        </button>
+      </div>
+  
+      <!-- COLUMNA DERECHA -->
+      <div class="col-md-6 separar">
+        <h4>ngfor</h4>
+        <hr>
+        <ul class="list-group">
+          <li *ngFor="let directiva of directivasContexto" class="list-group-item">
+            {{ directiva }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>

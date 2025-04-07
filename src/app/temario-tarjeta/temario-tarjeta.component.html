@@ -1,0 +1,12 @@
+<div class="card border-primary mb-3 h-90 margen">
+  <div class="card-header"> TEMA: {{ tema.id }}</div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">{{ tema.titulo }} ({{ tema.duracion}} sesiones)</h5>
+    <p>{{ tema.contenido}}</p>
+    <div class="d-flex align-items-center gap-3 fondo" >
+      <button (click)="meGusta()" class="btn btn-primary"><i class="far fa-thumbs-up"></i></button>
+      <p>Autor: {{tema.autor}}</p>
+      <p>Valoración: {{tema.puntuacion}}</p>
+    </div>
+  </div>
+</div>

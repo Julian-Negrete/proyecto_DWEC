@@ -1,0 +1,14 @@
+.bordes{
+    border-right: none;
+    border-left: none;
+    padding-left: 0%;
+}
+.ancho{
+    
+    margin: auto;
+    width: 95%;
+}
+.pipes{
+    margin-left: 2.5%;
+    margin-top: 10px;
+}
