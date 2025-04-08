@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input} from '@angular/core';
+import { ContadorService } from '../contador.service';
 
 @Component({
   selector: 'app-temario-tarjeta',
@@ -8,9 +9,17 @@ import { Component, Input } from '@angular/core';
 })
 export class TemarioTarjetaComponent {
   @Input() tema: any;
-  contador: number = 0;
+  /*contador: number = 0;
 
+  
   meGusta(){
     this.contador++;
-  }
+    
+  }*/
+    constructor(private contadorService: ContadorService) {}
+
+    sumar() {
+      this.contadorService.incrementar();
+    }
+  
 }

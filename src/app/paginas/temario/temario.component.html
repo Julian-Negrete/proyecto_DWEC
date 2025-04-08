@@ -1,7 +1,9 @@
 <div class="container">
-    <div class="row">
-      <div class="col-md-4" *ngFor="let tema of temas">
-        <app-temario-tarjeta [tema]="tema"></app-temario-tarjeta> <!-- Aquí pasas los datos a la tarjeta -->
-      </div>
+  <div>Me gustas: </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let tema of temas">
+      <app-temario-tarjeta [tema]="tema"></app-temario-tarjeta> <!-- Aquí pasan los datos a la tarjeta -->
     </div>
   </div>
+</div>
