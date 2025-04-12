@@ -9,14 +9,7 @@ import { Tema } from '../modelos/tema';
 })
 export class TemasService {
 
-  /*private temasUrl = 'app/datos/datostemario.json.ts'; 
-
-  constructor(private http: HttpClient) { }
-
   
-  getTemas(): Observable<any[]> {
-    return this.http.get<any[]>(this.temasUrl);
-  }*/
 
     httpOptions = {
       headers: new HttpHeaders(

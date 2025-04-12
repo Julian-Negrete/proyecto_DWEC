@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
-import { ContadorService } from '../contador.service';
 
 @Component({
   selector: 'app-temario-tarjeta',
@@ -14,14 +13,10 @@ export class TemarioTarjetaComponent {
   @Output() contadorEnviar = new EventEmitter<number>();
   
   meGusta(){
-    /*this.contador++;*/
-    console.log('Contador actual:', this.contador);
+    
+    
     this.contadorEnviar.emit(this.contador);
   }
-    /*constructor(private contadorService: ContadorService) {}
-
-    sumar() {
-      this.contadorService.incrementar();
-    }*/
+    
   
 }
