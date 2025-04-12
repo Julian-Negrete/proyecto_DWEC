@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { ContadorService } from '../contador.service';
 
 @Component({
@@ -9,17 +9,19 @@ import { ContadorService } from '../contador.service';
 })
 export class TemarioTarjetaComponent {
   @Input() tema: any;
-  /*contador: number = 0;
+  contador: number = 1;
 
+  @Output() contadorEnviar = new EventEmitter<number>();
   
   meGusta(){
-    this.contador++;
-    
-  }*/
-    constructor(private contadorService: ContadorService) {}
+    /*this.contador++;*/
+    console.log('Contador actual:', this.contador);
+    this.contadorEnviar.emit(this.contador);
+  }
+    /*constructor(private contadorService: ContadorService) {}
 
     sumar() {
       this.contadorService.incrementar();
-    }
+    }*/
   
 }

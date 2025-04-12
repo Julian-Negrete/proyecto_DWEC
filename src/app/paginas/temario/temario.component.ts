@@ -21,12 +21,15 @@ export class TemarioComponent {
   constructor(private temasService: TemasService) {}*/
 
   temas: Tema[] = [];
-  contador = 0;
+  totalLikes = 0;
+  /*contador = 0;*/
+  
+  
 
   constructor(
     private route: ActivatedRoute,
     private temarioService: TemasService,
-    private contadorService: ContadorService
+    /*private contadorService: ContadorService*/
   ) {
 
   }
@@ -34,10 +37,10 @@ export class TemarioComponent {
   ngOnInit(): void {
     this.getTemas();
 
-    this.contadorService.contador$.subscribe(valor => {
-      this.contador = valor;
-    });
-  }
+    /*this.contadorService.contador$.subscribe(valor => {
+      this.totalLikes = valor;*/
+    };
+  
 
   getTemas(): void {
     this.temarioService.getTemas().subscribe((data: Tema[]) => {
@@ -45,11 +48,14 @@ export class TemarioComponent {
     });
   }
 
-  /*totalLikes = 0;
+  
 
-  actualizarLikes(nuevosLikes: number) {
-    this.totalLikes = nuevosLikes;
-  }*/
+  actualizarLikes(nuevosLikes: number): void {
+    console.log('Nuevo like recibido:', nuevosLikes);
+    this.totalLikes += nuevosLikes;
+    console.log('Total likes actualizados:', this.totalLikes);
+
+  }
 
   
 
