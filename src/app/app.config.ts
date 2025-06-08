@@ -1,11 +1,13 @@
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'; 
-import { InMemoryDataService } from './servicios/in-memory-data.service'; 
+import { InMemoryDataService } from './servicios/in-memory-data.service';
+import { FormsModule } from '@angular/forms';
+
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }), 
@@ -13,6 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideHttpClient(),
     importProvidersFrom([ 
+      FormsModule,
       HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { 
         dataEncapsulation: false,
       }),

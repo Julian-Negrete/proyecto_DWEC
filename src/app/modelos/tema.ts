@@ -1,5 +1,5 @@
 export interface Tema {
-    id: number;
+    id?: number;
     titulo: string;
     contenido: string;
     puntuacion: number;

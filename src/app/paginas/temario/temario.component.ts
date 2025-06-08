@@ -3,11 +3,13 @@ import { TemasService } from '../../servicios/temas.service';
 import { TemarioTarjetaComponent } from '../../temario-tarjeta/temario-tarjeta.component';
 import { Tema } from '../../modelos/tema';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-temario',
-  imports: [TemarioTarjetaComponent, CommonModule],
+  imports: [TemarioTarjetaComponent, CommonModule, FormsModule, RouterModule],
   templateUrl: './temario.component.html',
   styleUrl: './temario.component.css'
 })
@@ -17,6 +19,7 @@ export class TemarioComponent {
 
   temas: Tema[] = [];
   totalLikes = 0;
+  busqueda: string = '';
   
   
   
@@ -24,7 +27,7 @@ export class TemarioComponent {
   constructor(
     private route: ActivatedRoute,
     private temarioService: TemasService,
-    
+    private router: Router
   ) {
 
   }
@@ -51,6 +54,16 @@ export class TemarioComponent {
 
   }
 
+
+  temasFiltrados(): Tema[] {
+    return this.temas.filter(t =>
+      t.titulo.toLowerCase().includes(this.busqueda.toLowerCase())
+    );
+  }
+
+  nuevoTema(): void {
+    this.router.navigate(['/formulario']);
+  }
   
 
 

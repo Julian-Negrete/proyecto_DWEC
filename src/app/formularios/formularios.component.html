@@ -1,0 +1,103 @@
+<div class="formulario-container" style="display: flex; flex-direction: column; align-items: center;">
+  <h2>{{ editando ? 'Editar Tema' : 'Nuevo Tema' }}</h2>
+  <form (ngSubmit)="guardar()" style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+    <div style="display: flex; gap: 2rem;">
+      <!-- Columna izquierda: Título y Contenido -->
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+          <label for="titulo" style="font-size: 2rem; font-weight: bold;">
+            Título:
+            <span style="color: #d32f2f;">*</span>
+          </label>
+          <input
+            id="titulo"
+            [(ngModel)]="tema.titulo"
+            name="titulo"
+            required
+            placeholder="Introduce el título"
+            style="width: 600px;"
+          >
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+          <label for="contenido" style="font-size: 2rem; font-weight: bold;">
+            Contenido:
+            <span style="color: #d32f2f;">*</span>
+          </label>
+          <textarea
+            id="contenido"
+            [(ngModel)]="tema.contenido"
+            name="contenido"
+            required
+            placeholder="Introduce el contenido"
+            style="width: 600px; height: 100px;"
+          ></textarea>
+        </div>
+      </div>
+      <!-- Columna derecha: Autor, Duración, Puntuación -->
+      <div style="display: flex; flex-direction: column; gap: 1rem; min-width: 180px;">
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+          <label for="autor" style="font-size: 2rem; font-weight: bold;">
+            Autor:
+            <span style="color: #d32f2f;">*</span>
+          </label>
+          <input
+            id="autor"
+            [(ngModel)]="tema.autor"
+            name="autor"
+            required
+            placeholder="Introduce el autor"
+            style="width: 360px;"
+          >
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+          <label for="duracion" style="font-size: 2rem; font-weight: bold;">
+            Duración:
+          </label>
+          <input
+            id="duracion"
+            type="number"
+            [(ngModel)]="tema.duracion"
+            name="duracion"
+            min="1"
+            placeholder="0"
+            style="width: 360px;"
+          >
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+          <label for="puntuacion" style="font-size: 2rem; font-weight: bold;">
+            Puntuación:
+          </label>
+          <input
+            id="puntuacion"
+            type="number"
+            [(ngModel)]="tema.puntuacion"
+            name="puntuacion"
+            min="0"
+            max="10"
+            placeholder="0"
+            style="width: 360px;"
+          >
+        </div>
+      </div>
+    </div>
+    <!-- Botones centrados horizontalmente -->
+    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; width: 100%;">
+      <button
+        type="button"
+        (click)="cancelar()"
+        style="border: 2px solid #d32f2f; color: #d32f2f; border-radius: 8px; background: none; padding: 8px 16px; display: flex; align-items: center; gap: 6px; font-weight: bold;"
+      >
+        <i class="fas fa-times" style="color: #d32f2f;"></i>
+        Cancelar
+      </button>
+      <button
+        type="submit"
+        
+        style="background-color: #1976d2; color: #fff; border: none; border-radius: 8px; padding: 8px 16px; display: flex; align-items: center; gap: 6px; font-weight: bold;"
+      >
+        <i class="fas fa-save" style="color: #fff;"></i>
+        Guardar
+      </button>
+    </div>
+  </form>
+</div>

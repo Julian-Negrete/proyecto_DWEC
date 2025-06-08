@@ -3,10 +3,17 @@
   <div class="card-body text-primary">
     <h5 class="card-title">{{ tema.titulo }} ({{ tema.duracion}} sesiones)</h5>
     <p>{{ tema.contenido}}</p>
-    <div class="d-flex align-items-center gap-3 fondo" >
-      <button (click)="meGusta()" class="btn btn-primary"><i class="far fa-thumbs-up"></i></button>
-      <p>Autor: {{tema.autor}}</p>
-      <p>Valoración: {{tema.puntuacion}}</p>
+    <div class="d-flex align-items-center gap-3 fondo" style="justify-content: space-between;">
+      <div class="d-flex align-items-center gap-3">
+        <button (click)="meGusta()" class="btn btn-primary"><i class="far fa-thumbs-up"></i></button>
+        <p>Autor: {{tema.autor}}</p>
+        <p>Valoración: {{tema.puntuacion}}</p>
+      </div>
+      <button [routerLink]="['/formulario', tema.id]" style="background: none; border: none; padding: 0;">
+        <span style="display: inline-flex; width: 32px; height: 32px; border: 2px solid #28a745; border-radius: 6px; align-items: center; justify-content: center;">
+          <i class="fas fa-edit" style="color: #28a745; font-size: 0.75rem;"></i>
+        </span>
+      </button>
     </div>
   </div>
 </div>

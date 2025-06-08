@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-temario-tarjeta',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './temario-tarjeta.component.html',
   styleUrl: './temario-tarjeta.component.css'
 })

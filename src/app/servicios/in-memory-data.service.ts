@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Tema } from '../modelos/tema';
 
 @Injectable({
   providedIn: 'root'
@@ -72,6 +73,15 @@ export class InMemoryDataService {
         id: 8
     }
     ];
+    console.log('Base de datos en memoria creada con temas');
     return {temas};
   }
+
+  genId(temas: Tema[]): number {
+    console.log('Generando ID para el nuevo tema');
+    return temas.length > 0 ? Math.max(...temas.map(t => t.id ?? 0)) + 1 : 1;
+  }
+  
 }
+
+
